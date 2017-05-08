@@ -2,6 +2,7 @@
 #include "circle.hpp"
 #include <math.h>
 #include "window.hpp"
+#include "rectangle.hpp"
 Circle::Circle(): r{5}, clr{0.0} {}
 Circle::Circle(float x, Color const& c): r{x}, clr{c} {
 	if (r<=0){

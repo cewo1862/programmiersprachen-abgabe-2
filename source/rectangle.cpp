@@ -4,10 +4,10 @@
 #include "window.hpp"
 #include "vec2.hpp"
 Rectangle::Rectangle(): v{}, clr{c} {}
-Rectangle::Rectangle(Vec2 v, Color const& c): v{v},clr{c} {
-	float a=v.x
-	float b=v.y
-	if (a<=0||b<=0){
+Rectangle::Rectangle(Vec2 const& v,float w,float h,Color const& c): v{v},w{0.0},h{0.0},clr{c} {
+	w=v.x;
+	h=v.y;
+	if (w<=0||h<=0){
 		w=4.0;
 		h=5.0;
 	}
@@ -57,29 +57,29 @@ Color Rectangle::getColor() const{
 }
 void Rectangle::draw(Window& win,float c)
 {
-	win.draw_line(0.1,0.1,0.1,0.1+a/c,clr.r,clr.g,clr.b);
-	win.draw_line(0.1,0.1,0.1+b/c,0.1,clr.r,clr.g,clr.b);
-	win.draw_line(0.1+b/c,0.1,0.1+b/c,0.1+a/c,clr.r,clr.g,clr.b);
-	win.draw_line(0.1,0.1+a/c,0.1+b/c,0.1+a/c,clr.r,clr.g,clr.b);
+	win.draw_line(0.1,0.1,0.1,0.1+w/c,clr.r,clr.g,clr.b);
+	win.draw_line(0.1,0.1,0.1+h/c,0.1,clr.r,clr.g,clr.b);
+	win.draw_line(0.1+h/c,0.1,0.1+h/c,0.1+w/c,clr.r,clr.g,clr.b);
+	win.draw_line(0.1,0.1+w/c,0.1+h/c,0.1+w/c,clr.r,clr.g,clr.b);
 }
 void Rectangle::draw(Window& win,float c, Point2D s)
 {
-	win.draw_line(s.x,s.y,s.x,s.y+a/c,clr.r,clr.g,clr.b);
-	win.draw_line(s.x,s.y,s.x+b/c,s.y,clr.r,clr.g,clr.b);
-	win.draw_line(s.x+b/c,s.y,s.x+b/c,s.y+a/c,clr.r,clr.g,clr.b);
-	win.draw_line(s.x,s.y+a/c,s.x+b/c,s.y+a/c,clr.r,clr.g,clr.b);
+	win.draw_line(s.x,s.y,s.x,s.y+w/c,clr.r,clr.g,clr.b);
+	win.draw_line(s.x,s.y,s.x+h/c,s.y,clr.r,clr.g,clr.b);
+	win.draw_line(s.x+h/c,s.y,s.x+h/c,s.y+w/c,clr.r,clr.g,clr.b);
+	win.draw_line(s.x,s.y+w/c,s.x+h/c,s.y+w/c,clr.r,clr.g,clr.b);
 }
 void Rectangle::draw(Window& win)
 {
-	win.draw_line(0.1,0.1,0.1,0.1+a/100,clr.r,clr.g,clr.b); 
-	win.draw_line(0.1,0.1,0.1+b/100,0.1,clr.r,clr.g,clr.b); 
-	win.draw_line(0.1+b/100,0.1,0.1+b/100,0.1+a/100,clr.r,clr.g,clr.b); 
-	win.draw_line(0.1,0.1+a/100,0.1+b/100,0.1+a/100,clr.r,clr.g,clr.b); 
+	win.draw_line(0.1,0.1,0.1,0.1+w/100,clr.r,clr.g,clr.b); 
+	win.draw_line(0.1,0.1,0.1+h/100,0.1,clr.r,clr.g,clr.b); 
+	win.draw_line(0.1+h/100,0.1,0.1+h/100,0.1+w/100,clr.r,clr.g,clr.b); 
+	win.draw_line(0.1,0.1+w/100,0.1+h/100,0.1+w/100,clr.r,clr.g,clr.b); 
 }
 void Rectangle::draw(Window& win, Point2D s) 
 {
-	win.draw_line(s.x,s.y,s.x,s.y+a/100,clr.r,clr.g,clr.b); 
-	win.draw_line(s.x,s.y,s.x+b/100,s.y,clr.r,clr.g,clr.b); 
-	win.draw_line(s.x+b/100,s.y,s.x+b/100,s.y+a/100,clr.r,clr.g,clr.b); 
-	win.draw_line(s.x,s.y+a/100,s.x+b/100,s.y+a/100,clr.r,clr.g,clr.b); 
+	win.draw_line(s.x,s.y,s.x,s.y+w/100,clr.r,clr.g,clr.b); 
+	win.draw_line(s.x,s.y,s.x+h/100,s.y,clr.r,clr.g,clr.b); 
+	win.draw_line(s.x+h/100,s.y,s.x+h/100,s.y+w/100,clr.r,clr.g,clr.b); 
+	win.draw_line(s.x,s.y+w/100,s.x+h/100,s.y+w/100,clr.r,clr.g,clr.b); 
 }

@@ -2,9 +2,7 @@
 #define CIRCLE_HPP
 #include "color.hpp"
 #include "window.hpp"
-struct Point2D{
-	float x,y;
-};
+#include "rectangle.hpp"
 class Circle{
 public:
 	Circle();

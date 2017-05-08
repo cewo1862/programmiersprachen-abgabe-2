@@ -19,10 +19,18 @@ float Mat2::det() const{
 }
 
 Mat2 operator*(Mat2 const& m1, Mat2 const& m2){
-	float a=m1.a11*m2.a11+m1.a12*m2.a21;
-	float b=m1.a11*m2.a12+m1.a12*m2.a22;
-	float c=m1.a21*m2.a11+m1.a22*m2.a21;
-	float d=m1.a21*m2.a12+m1.a22*m2.a22;
+	float e=m1.a11*m2.a11;
+	float f=m1.a12*m2.a21;
+	float g=m1.a11*m2.a12;
+	float h=m1.a12*m2.a22;
+	float i=m1.a21*m2.a11;
+	float j=m1.a22*m2.a21;
+	float k=m1.a21*m2.a12;
+	float l=m1.a22*m2.a22;
+	float a=e+f;
+	float b=g+h;
+	float c=i+j;
+	float d=k+l;
 	return Mat2 {a,b,c,d};
 }
 

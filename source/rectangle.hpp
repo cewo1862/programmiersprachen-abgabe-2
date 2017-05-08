@@ -9,8 +9,7 @@ struct Point2D{
 class Rectangle{
 public:
 	Rectangle();
-	Rectangle(float w,float h,Color const& c);
-	Rectangle(Vec2 v,Color const& c);
+	Rectangle(Vec2 const& v,float w, float h,Color const& c);
 	void setHeight(float h);
 	void setWidth(float w);
 	void setColor(Color clr_);
@@ -24,10 +23,11 @@ public:
 	void draw(Window& w, Point2D s); 
 	void draw(Window& w); 
 private:
-	float a;
-	float b;
+	float w;
+	float h;
 	Color clr;
 	float c;
+	Vec2 v;
 	Point2D s;
 };
 #endif
